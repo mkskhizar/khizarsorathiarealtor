@@ -1,276 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shabbir Memon | Premium Real Estate KHI & ISB</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shabbir Memon Realtor | ISB & KHI</title>
 
-  <!-- Inter font for ideal header -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f8f9fa;
-      color: #222;
-      line-height: 1.6;
-    }
+<style>
+/* ===== Reset & body ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Inter, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif; line-height: 1.6; background: #f8f9fa; color: #222; }
 
-    /* ===== IDEAL HEADER STYLE ===== */
-    header.LargeHeader {
-      height: 90vh; /* keep hero height */
-      min-height: 600px;
-      background: linear-gradient(rgba(0, 43, 92, 0.7), rgba(0, 43, 92, 0.7)), url('https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/hero%20banner.jpg.png') center/cover no-repeat;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-    }
+/* ===== Header ===== */
+header {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(rgba(0,43,92,0.6), rgba(0,43,92,0.6)), url('https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/hero%20banner.jpg.png') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
 
-    .logo {
-      max-width: 180px;
-      margin-bottom: 20px;
-    }
+header .header-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  position: absolute;
+  top: 0;
+  height: 70px;
+  background-color: rgba(255,255,255,0.9);
+}
 
-    header h1 {
-      font-size: 4.2em;
-      margin: 0;
-      text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
-      font-weight: 700;
-    }
+header .logo {
+  display: flex;
+  align-items: center;
+}
 
-    header p {
-      font-size: 1.5em;
-      margin: 10px 0;
-      max-width: 900px;
-      font-weight: 400;
-    }
+header .logo img {
+  max-height: 50px;
+  margin-right: 15px;
+}
 
-    .title-banner {
-      background: rgba(0,0,0,0.5);
-      padding: 20px 40px;
-      border-radius: 12px;
-      margin-top: 30px;
-      backdrop-filter: blur(5px);
-    }
+header .logo span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #002b5c;
+}
 
-    /* Top nav bar like ideal site */
-    .top-header {
-      width: 100%;
-      height: 60px;
-      background-color: #fefefe;
-      border-bottom: 1px solid #d1d1d1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 24px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 110;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
-      font-weight: 400;
-      line-height: 1.5;
-    }
+header .nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #15727a;
+  transition: 0.3s;
+}
 
-    .top-header .brand {
-      font-weight: 600;
-      color: #222;
-      font-size: 1rem;
-    }
+header .nav-links a:hover {
+  color: #e63946;
+}
 
-    .top-header .nav-links a {
-      margin-left: 20px;
-      color: #15727a;
-      text-decoration: none;
-      font-weight: 700;
-    }
+/* ===== Hero Search ===== */
+header .hero-search {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-    .top-header .nav-links a:hover {
-      text-decoration: underline;
-    }
+header .hero-search input[type="text"] {
+  padding: 12px 15px;
+  width: 300px;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
 
-    /* ===== Listings ===== */
-    .container {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
+header .hero-search button {
+  padding: 12px 18px;
+  border: none;
+  background: #15727a;
+  color: white;
+  font-weight: 600;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    h2 {
-      color: #002b5c;
-      text-align: center;
-      font-size: 2.8em;
-      margin-bottom: 40px;
-      position: relative;
-    }
+header .hero-search button:hover { background: #e63946; }
 
-    h2::after {
-      content: '';
-      width: 80px;
-      height: 4px;
-      background: #ffd700;
-      display: block;
-      margin: 15px auto 0;
-      border-radius: 2px;
-    }
+/* ===== Container for pages ===== */
+.container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 35px;
-    }
+/* ===== Section Titles ===== */
+h2 { color: #002b5c; text-align: center; font-size: 2.5rem; margin-bottom: 30px; position: relative; }
+h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #ffd700;
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
 
-    .property-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      transition: all 0.4s ease;
-    }
+/* ===== Grid for properties ===== */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 30px; }
 
-    .property-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    }
+.property-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: all 0.3s;
+}
 
-    .property-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-    }
+.property-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.18); }
 
-    .card-body {
-      padding: 25px;
-    }
+.property-card img { width: 100%; height: 260px; object-fit: cover; }
 
-    .price {
-      background: #e63946;
-      color: white;
-      display: inline-block;
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
+.card-body { padding: 20px; }
 
-    .details {
-      color: #555;
-      margin: 12px 0;
-    }
+.price { background: #e63946; color: white; padding: 8px 18px; border-radius: 30px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
 
-    .whatsapp-btn {
-      display: block;
-      background: #25D366;
-      color: white;
-      text-align: center;
-      padding: 14px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-      font-size: 1.1em;
-      transition: background 0.3s;
-    }
+.details { color: #555; margin: 12px 0; }
 
-    .whatsapp-btn:hover {
-      background: #128C7E;
-    }
+.whatsapp-btn { display: block; text-align: center; background: #25D366; color: white; padding: 12px; border-radius: 30px; text-decoration: none; font-weight: 700; margin-top: 15px; transition: 0.3s; }
+.whatsapp-btn:hover { background: #128C7E; }
 
-    footer {
-      background: #002b5c;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 80px;
-    }
+/* ===== Footer ===== */
+footer {
+  background: #002b5c;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px;
+}
 
-    @media (max-width: 768px) {
-      header h1 { font-size: 3em; }
-      .logo { max-width: 140px; }
-      .top-header .nav-links a { margin-left: 10px; font-size: 0.9em; }
-    }
-  </style>
+/* ===== Conversion Table ===== */
+table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+table, th, td { border: 1px solid #ccc; }
+th, td { padding: 10px; text-align: center; }
+
+/* ===== About page ===== */
+.about { max-width: 800px; margin: 50px auto; text-align: center; font-size: 1.1rem; color: #333; line-height: 1.8; }
+
+/* ===== Responsive ===== */
+@media(max-width: 768px){
+  header .nav-links a { margin-left: 15px; font-size: 0.9rem; }
+  header .hero-search { flex-direction: column; margin-top: 130px; }
+  header .hero-search input, header .hero-search button { width: 90%; margin: 5px 0; border-radius: 6px; }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Top nav header like ideal site -->
-  <div class="top-header">
-    <div class="brand">Shabbir Memon</div>
+<!-- Header -->
+<header>
+  <div class="header-top">
+    <div class="logo">
+      <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/logo.png.png" alt="Logo">
+      <span>Shabbir Memon Realtor ISB & KHI</span>
+    </div>
     <div class="nav-links">
-      <a href="#properties">Properties</a>
-      <a href="https://wa.me/923332964231">Contact</a>
+      <a href="#house">House for Sale</a>
+      <a href="#apartment">Apartment for Sale</a>
+      <a href="#commercial">Commercial Property</a>
+      <a href="#conversion">Conversion</a>
+      <a href="#about">About</a>
     </div>
   </div>
 
-  <!-- Hero banner (existing) -->
-  <header class="LargeHeader">
-    <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/logo.png.png" alt="Shabbir Memon Logo" class="logo">
-    <h1>Shabbir Memon</h1>
-    <div class="title-banner">
-      <p>Founder & CEO – Al-MoiZ Enterprises, Karachi</p>
-      <p>Managing Director – SA Property, Islamabad</p>
+  <!-- Hero search -->
+  <div class="hero-search">
+    <input type="text" placeholder="Search properties by city, area, price...">
+    <button>Search</button>
+  </div>
+</header>
+
+<!-- Featured Properties -->
+<div class="container" id="house">
+  <h2>Featured Premium Properties</h2>
+  <div class="grid">
+    <div class="property-card">
+      <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/apartment%20for%20sale%20johar%20.jpg" alt="">
+      <div class="card-body">
+        <div class="price">Exclusive Direct Price</div>
+        <h3>3-Bed Flat – Gulistan-e-Jauhar Block 15</h3>
+        <p class="details">1400 Sq Ft • 2nd Floor • Lift • Generator • Road Facing • Leased • Key Available</p>
+        <a href="https://wa.me/923332964231" class="whatsapp-btn">WhatsApp Now</a>
+      </div>
     </div>
-  </header>
-
-  <!-- Listings -->
-  <div class="container" id="properties">
-    <h2>Featured Premium Properties</h2>
-    <div class="grid">
-      <div class="property-card">
-        <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/apartment%20for%20sale%20johar%20.jpg" alt="Flat for Sale Gulistan-e-Jauhar">
-        <div class="card-body">
-          <div class="price">Exclusive Direct Price</div>
-          <h3>3-Bed Flat – Gulistan-e-Jauhar Block 15 (Decent Towers)</h3>
-          <p class="details">1400 Sq Ft • 2nd Floor • Lift • Generator • Road Facing • Leased • Key Available</p>
-          <a href="https://wa.me/923332964231?text=Interested%20in%20Gulistan-e-Jauhar%20Flat" class="whatsapp-btn">WhatsApp Now: 0333-2964231</a>
-        </div>
+    <div class="property-card">
+      <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/building%20for%20sale%20karachi.jpg.jpg" alt="">
+      <div class="card-body">
+        <div class="price">16 Crore (Demand)</div>
+        <h3>Commercial Building – Bahadurabad</h3>
+        <p class="details">2100 Sq Ft • 745k Monthly Income • 10-Year Lease • Prime Location</p>
+        <a href="https://wa.me/923332964231" class="whatsapp-btn">WhatsApp Now</a>
       </div>
-
-      <div class="property-card">
-        <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/building%20for%20sale%20karachi.jpg.jpg" alt="Commercial Building Bahadurabad">
-        <div class="card-body">
-          <div class="price">16 Crore (Demand)</div>
-          <h3>Fully Rented Commercial Building – Bahadurabad</h3>
-          <p class="details">2100 Sq Ft • 745k Monthly Income • 10-Year Lease • Prime Location Opposite KFC</p>
-          <a href="https://wa.me/923332964231?text=Interested%20in%20Bahadurabad%20Building" class="whatsapp-btn">WhatsApp Now: 0333-2964231</a>
-        </div>
-      </div>
-
-      <div class="property-card">
-        <img src="https://media.zameen.com/thumbnails/24893762-800x600.jpeg" alt="House for Sale F-11 Islamabad">
-        <div class="card-body">
-          <div class="price">Contact for Demand</div>
-          <h3>House for Sale – F-11 Islamabad</h3>
-          <p class="details">1.5 Kanal • 8 Bedrooms • Basement+Ground+1st • Closed-End Street • Investment/Family</p>
-          <a href="https://wa.me/923332964231?text=Interested%20in%20F-11%20House" class="whatsapp-btn">WhatsApp Now: 0333-2964231</a>
-        </div>
-      </div>
-
-      <div class="property-card">
-        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2541634936227223" alt="House for Rent E-11 Islamabad">
-        <div class="card-body">
-          <div class="price">PKR 2.5 Lac / Month</div>
-          <h3>House for Rent – Main Double Road, E-11 Islamabad</h3>
-          <p class="details">7 Marla • 5 Bedrooms + Mumty • 1 Min from Markaz • Ideal for Hostel/Airbnb</p>
-          <a href="https://wa.me/923332964231?text=Interested%20in%20E-11%20Rent%20House" class="whatsapp-btn">WhatsApp Now: 0333-2964231</a>
-        </div>
-      </div>
-
     </div>
   </div>
+</div>
 
-  <footer>
-    <p>Shabbir Memon Realtor | KHI & ISB</p>
-    <p>📞 0335-9282233 | 0300-9232233 • WhatsApp: 0333-2964231</p>
-    <p>Direct & Genuine Deals Only • Dealers Welcome</p>
-  </footer>
+<!-- Conversion Page -->
+<div class="container" id="conversion">
+  <h2>Conversion Table</h2>
+  <table>
+    <tr><th>Marla</th><th>Sq.Ft</th><th>Sq.Yard</th><th>Kanal</th><th>Acre</th></tr>
+    <tr><td>1</td><td>272</td><td>30.22</td><td>0.03</td><td>0.006</td></tr>
+    <tr><td>5</td><td>1360</td><td>151.1</td><td>0.15</td><td>0.03</td></tr>
+    <tr><td>10</td><td>2720</td><td>302.2</td><td>0.3</td><td>0.06</td></tr>
+    <tr><td>20</td><td>5440</td><td>604.4</td><td>0.6</td><td>0.12</td></tr>
+  </table>
+</div>
+
+<!-- About Page -->
+<div class="container about" id="about">
+  <h2>About Shabbir Memon</h2>
+  <p>Since 1996, helping investors and families buy verified properties in Islamabad & Karachi.</p>
+  <p><strong>Location:</strong> Office No. 4, Iqra Arcade, Gulshan-e-Iqbal Block 6, Karachi, Pakistan</p>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/923332964231" style="color:#15727a;">+92 333 2964231</a></p>
+  <p><strong>Email:</strong> <a href="mailto:khizarsorathia@gmail.com" style="color:#15727a;">khizarsorathia@gmail.com</a></p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Shabbir Memon Realtor | ISB & KHI</p>
+  <p>📞 +92 335-9282233 • WhatsApp: +92 333-2964231</p>
+  <p>Direct & Genuine Deals Only • Dealers Welcome</p>
+</footer>
 
 </body>
 </html>
