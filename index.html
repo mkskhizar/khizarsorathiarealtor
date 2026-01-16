@@ -5,58 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shabbir Memon | Premium Real Estate KHI & ISB</title>
 
-  <!-- Inter font (same as ideal site) -->
+  <!-- Inter font for ideal header -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
       background: #f8f9fa;
       color: #222;
       line-height: 1.6;
     }
 
-    /* ===== IDEAL CLEAN HEADER ===== */
-    header {
+    /* ===== IDEAL HEADER STYLE ===== */
+    header.LargeHeader {
+      height: 90vh; /* keep hero height */
+      min-height: 600px;
+      background: linear-gradient(rgba(0, 43, 92, 0.7), rgba(0, 43, 92, 0.7)), url('https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/hero%20banner.jpg.png') center/cover no-repeat;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .logo {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 4.2em;
+      margin: 0;
+      text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin: 10px 0;
+      max-width: 900px;
+      font-weight: 400;
+    }
+
+    .title-banner {
+      background: rgba(0,0,0,0.5);
+      padding: 20px 40px;
+      border-radius: 12px;
+      margin-top: 30px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Top nav bar like ideal site */
+    .top-header {
+      width: 100%;
       height: 60px;
-      background: #ffffff;
+      background-color: #fefefe;
       border-bottom: 1px solid #d1d1d1;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 24px;
-      font-size: 0.875rem;
-      font-weight: 400;
-      position: sticky;
+      position: absolute;
       top: 0;
-      z-index: 100;
-    }
-
-    header strong {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #222;
-    }
-
-    header .tagline {
-      margin-left: 10px;
-      color: #666;
+      left: 0;
+      z-index: 110;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
       font-weight: 400;
+      line-height: 1.5;
     }
 
-    nav a {
+    .top-header .brand {
+      font-weight: 600;
+      color: #222;
+      font-size: 1rem;
+    }
+
+    .top-header .nav-links a {
       margin-left: 20px;
       color: #15727a;
       text-decoration: none;
       font-weight: 700;
     }
 
-    nav a:hover {
+    .top-header .nav-links a:hover {
       text-decoration: underline;
     }
 
-    /* ===== MAIN CONTENT ===== */
+    /* ===== Listings ===== */
     .container {
       max-width: 1200px;
       margin: 60px auto;
@@ -66,8 +106,19 @@
     h2 {
       color: #002b5c;
       text-align: center;
-      font-size: 2.6em;
+      font-size: 2.8em;
       margin-bottom: 40px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #ffd700;
+      display: block;
+      margin: 15px auto 0;
+      border-radius: 2px;
     }
 
     .grid {
@@ -81,12 +132,12 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
 
     .property-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
     }
 
     .property-card img {
@@ -105,7 +156,7 @@
       display: inline-block;
       padding: 8px 18px;
       border-radius: 30px;
-      font-weight: 700;
+      font-weight: bold;
       margin-bottom: 12px;
     }
 
@@ -122,9 +173,10 @@
       padding: 14px;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: bold;
       margin-top: 20px;
-      font-size: 1.05em;
+      font-size: 1.1em;
+      transition: background 0.3s;
     }
 
     .whatsapp-btn:hover {
@@ -140,49 +192,74 @@
     }
 
     @media (max-width: 768px) {
-      header .tagline { display: none; }
+      header h1 { font-size: 3em; }
+      .logo { max-width: 140px; }
+      .top-header .nav-links a { margin-left: 10px; font-size: 0.9em; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- IDEAL HEADER -->
-  <header>
-    <div>
-      <strong>Shabbir Memon</strong>
-      <span class="tagline">Premium Real Estate • Karachi & Islamabad</span>
-    </div>
-
-    <nav>
+  <!-- Top nav header like ideal site -->
+  <div class="top-header">
+    <div class="brand">Shabbir Memon</div>
+    <div class="nav-links">
       <a href="#properties">Properties</a>
       <a href="https://wa.me/923332964231">Contact</a>
-    </nav>
+    </div>
+  </div>
+
+  <!-- Hero banner (existing) -->
+  <header class="LargeHeader">
+    <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/logo.png.png" alt="Shabbir Memon Logo" class="logo">
+    <h1>Shabbir Memon</h1>
+    <div class="title-banner">
+      <p>Founder & CEO – Al-MoiZ Enterprises, Karachi</p>
+      <p>Managing Director – SA Property, Islamabad</p>
+    </div>
   </header>
 
-  <!-- LISTINGS (UNCHANGED) -->
+  <!-- Listings -->
   <div class="container" id="properties">
     <h2>Featured Premium Properties</h2>
-
     <div class="grid">
-
       <div class="property-card">
-        <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/apartment%20for%20sale%20johar%20.jpg" alt="">
+        <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/apartment%20for%20sale%20johar%20.jpg" alt="Flat for Sale Gulistan-e-Jauhar">
         <div class="card-body">
           <div class="price">Exclusive Direct Price</div>
-          <h3>3-Bed Flat – Gulistan-e-Jauhar Block 15</h3>
-          <p class="details">1400 Sq Ft • Lift • Generator • Road Facing • Leased</p>
-          <a href="https://wa.me/923332964231" class="whatsapp-btn">WhatsApp Now</a>
+          <h3>3-Bed Flat – Gulistan-e-Jauhar Block 15 (Decent Towers)</h3>
+          <p class="details">1400 Sq Ft • 2nd Floor • Lift • Generator • Road Facing • Leased • Key Available</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20Gulistan-e-Jauhar%20Flat" class="whatsapp-btn">WhatsApp Now: 0333-2964231</a>
         </div>
       </div>
 
       <div class="property-card">
-        <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/building%20for%20sale%20karachi.jpg.jpg" alt="">
+        <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/building%20for%20sale%20karachi.jpg.jpg" alt="Commercial Building Bahadurabad">
         <div class="card-body">
           <div class="price">16 Crore (Demand)</div>
-          <h3>Commercial Building – Bahadurabad</h3>
-          <p class="details">2100 Sq Ft • 745k Rent • Prime Location</p>
-          <a href="https://wa.me/923332964231" class="whatsapp-btn">WhatsApp Now</a>
+          <h3>Fully Rented Commercial Building – Bahadurabad</h3>
+          <p class="details">2100 Sq Ft • 745k Monthly Income • 10-Year Lease • Prime Location Opposite KFC</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20Bahadurabad%20Building" class="whatsapp-btn">WhatsApp Now: 0333-2964231</a>
+        </div>
+      </div>
+
+      <div class="property-card">
+        <img src="https://media.zameen.com/thumbnails/24893762-800x600.jpeg" alt="House for Sale F-11 Islamabad">
+        <div class="card-body">
+          <div class="price">Contact for Demand</div>
+          <h3>House for Sale – F-11 Islamabad</h3>
+          <p class="details">1.5 Kanal • 8 Bedrooms • Basement+Ground+1st • Closed-End Street • Investment/Family</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20F-11%20House" class="whatsapp-btn">WhatsApp Now: 0333-2964231</a>
+        </div>
+      </div>
+
+      <div class="property-card">
+        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2541634936227223" alt="House for Rent E-11 Islamabad">
+        <div class="card-body">
+          <div class="price">PKR 2.5 Lac / Month</div>
+          <h3>House for Rent – Main Double Road, E-11 Islamabad</h3>
+          <p class="details">7 Marla • 5 Bedrooms + Mumty • 1 Min from Markaz • Ideal for Hostel/Airbnb</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20E-11%20Rent%20House" class="whatsapp-btn">WhatsApp Now: 0333-2964231</a>
         </div>
       </div>
 
@@ -190,9 +267,9 @@
   </div>
 
   <footer>
-    <p>Shabbir Memon Realtor | Karachi & Islamabad</p>
-    <p>📞 0335-9282233 • WhatsApp 0333-2964231</p>
-    <p>Direct & Genuine Deals Only</p>
+    <p>Shabbir Memon Realtor | KHI & ISB</p>
+    <p>📞 0335-9282233 | 0300-9232233 • WhatsApp: 0333-2964231</p>
+    <p>Direct & Genuine Deals Only • Dealers Welcome</p>
   </footer>
 
 </body>
