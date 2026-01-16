@@ -5,10 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shabbir Memon Realtor – ISB & KHI</title>
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <script>
@@ -29,26 +34,72 @@ tailwind.config = {
 
 <style>
 html{scroll-behavior:smooth}
-.hero{
-  height:520px;
+body{background:#f8f9fa}
+
+.hero-section{
+  height:500px;
   background:
-  linear-gradient(rgba(0,43,92,.7),rgba(0,43,92,.7)),
-  url('https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/hero%20banner.jpg.png')
-  center/cover no-repeat;
+    linear-gradient(rgba(0,43,92,.7),rgba(0,43,92,.7)),
+    url('https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/hero%20banner.jpg.png')
+    center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:0 20px
 }
+
+.hero-search{
+  display:flex;
+  max-width:600px;
+  width:100%;
+  margin-top:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2)
+}
+
+.hero-search input{
+  flex:1;
+  padding:16px;
+  border:none;
+  border-radius:6px 0 0 6px;
+  outline:none
+}
+
+.hero-search button{
+  padding:16px 24px;
+  background:#15727a;
+  color:white;
+  font-weight:600;
+  border:none;
+  border-radius:0 6px 6px 0
+}
+
+.hero-search button:hover{background:#e63946}
+
+.property-card{transition:.3s}
 .property-card:hover{
   transform:translateY(-5px);
-  box-shadow:0 20px 25px rgba(0,0,0,.15)
+  box-shadow:0 20px 25px rgba(0,0,0,.1)
+}
+
+.conversion-table th{background:#002b5c;color:white}
+.conversion-table tr:nth-child(even){background:#f2f2f2}
+
+.sticky-nav{
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  box-shadow:0 2px 10px rgba(0,0,0,.1)
 }
 </style>
 </head>
 
-<body class="bg-bgLight text-gray-800 flex flex-col min-h-screen">
+<body class="antialiased flex flex-col min-h-screen">
 
 <!-- NAV -->
-<nav class="bg-white sticky top-0 z-50 shadow">
-<div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
-
+<nav class="sticky-nav sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
 <div class="flex items-center gap-3">
 <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/logo.png.png" class="h-12">
 <div>
@@ -57,7 +108,7 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 
-<div class="hidden md:flex gap-6 font-medium">
+<div class="hidden md:flex gap-6">
 <a href="#properties">House</a>
 <a href="#properties">Apartment</a>
 <a href="#properties">Commercial</a>
@@ -68,85 +119,83 @@ html{scroll-behavior:smooth}
 </a>
 </div>
 
+<button id="mobile-btn" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+</div>
+
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-2">
+<a href="#properties" class="block">House</a>
+<a href="#conversion" class="block">Conversion</a>
+<a href="#about" class="block">About</a>
 </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero flex flex-col justify-center items-center text-white text-center px-4">
+<header class="hero-section">
 <h1 class="text-4xl md:text-5xl font-bold mb-4">Find Your Dream Property</h1>
 <p class="max-w-2xl text-gray-200 mb-6">
-Premium real estate opportunities in Islamabad & Karachi
+Premium real estate opportunities in Islamabad & Karachi.
 </p>
-
-<div class="flex w-full max-w-xl shadow-lg">
-<input id="searchInput" class="flex-1 p-4 rounded-l outline-none text-black" placeholder="Search by area or city">
-<button onclick="document.getElementById('properties').scrollIntoView()" class="bg-secondary px-6 rounded-r">
-<i class="fas fa-search"></i>
-</button>
+<div class="hero-search">
+<input id="searchInput" placeholder="Search by area, city…">
+<button onclick="document.getElementById('properties').scrollIntoView()">Search</button>
 </div>
 </header>
 
 <!-- PROPERTIES -->
-<section id="properties" class="py-16 max-w-7xl mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+<section id="properties" class="py-16 max-w-7xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-center text-primary mb-12">Featured Listings</h2>
 
-<div class="property-card bg-white rounded-xl overflow-hidden">
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<div class="property-card bg-white rounded-xl shadow">
 <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/apartment%20for%20sale%20johar%20.jpg" class="h-64 w-full object-cover">
 <div class="p-6">
-<h3 class="font-bold text-lg text-primary">3-Bed Flat – Gulistan-e-Jauhar</h3>
-<p class="text-sm text-gray-600 mb-4">1400 Sq Ft • Lift • Generator</p>
-<a href="https://wa.me/923332964231" class="block bg-green-500 text-white text-center py-3 rounded">
-<i class="fab fa-whatsapp"></i> WhatsApp
+<div class="text-secondary font-bold text-xl">Call for Price</div>
+<h3 class="font-bold">3-Bed Flat – Gulistan-e-Jauhar</h3>
+<a href="https://wa.me/923332964231" class="block mt-4 bg-green-500 text-white text-center py-2 rounded">
+WhatsApp Now
 </a>
 </div>
 </div>
 
-<div class="property-card bg-white rounded-xl overflow-hidden">
-<img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/building%20for%20sale%20karachi.jpg.jpg" class="h-64 w-full object-cover">
-<div class="p-6">
-<h3 class="font-bold text-lg text-primary">Commercial Building – Bahadurabad</h3>
-<p class="text-sm text-gray-600 mb-4">Prime Location • High ROI</p>
-<a href="https://wa.me/923332964231" class="block bg-green-500 text-white text-center py-3 rounded">
-<i class="fab fa-whatsapp"></i> WhatsApp
-</a>
 </div>
-</div>
-
 </section>
 
 <!-- CONVERSION -->
 <section id="conversion" class="bg-white py-16">
 <div class="max-w-4xl mx-auto px-4">
-<h2 class="text-3xl font-bold text-center text-primary mb-6">Land Conversion</h2>
-<table class="w-full border">
-<tr class="bg-primary text-white">
-<th class="p-3">Marla</th><th class="p-3">Sq Ft</th><th class="p-3">Kanal</th>
-</tr>
-<tr><td class="p-3">1</td><td class="p-3">272</td><td class="p-3">0.05</td></tr>
-<tr><td class="p-3">20</td><td class="p-3">5440</td><td class="p-3">1</td></tr>
+<h2 class="text-3xl font-bold text-center text-primary mb-8">Land Conversion Tool</h2>
+<table class="w-full conversion-table border">
+<tr><th>Marla</th><th>Sq Ft</th><th>Kanal</th></tr>
+<tr><td>1</td><td>272</td><td>0.05</td></tr>
+<tr><td>20</td><td>5440</td><td>1</td></tr>
 </table>
 </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-16 max-w-5xl mx-auto px-4">
-<div class="bg-white p-8 rounded-xl shadow border-l-4 border-secondary">
+<section id="about" class="py-16 bg-bgLight">
+<div class="max-w-4xl mx-auto px-4 text-center">
 <h2 class="text-3xl font-bold text-primary mb-4">About Us</h2>
-<p class="mb-4">Since 1996, helping investors and families buy verified properties in Islamabad & Karachi.</p>
-<p><strong>Karachi:</strong> Office No. 4, Iqra Arcade, Gulshan-e-Iqbal Block 6</p>
-<p><strong>Email:</strong> khizarsorathia@gmail.com</p>
+<p>Since 1996, helping investors and families buy verified properties in Islamabad & Karachi.</p>
+<p class="mt-4">📍 Office No.4, Iqra Arcade, Gulshan-e-Iqbal Block 6, Karachi</p>
+<p>📧 khizarsorathia@gmail.com</p>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="bg-primary text-white text-center py-8 mt-auto">
-<p class="font-bold">Shabbir Memon Realtor | ISB & KHI</p>
-<p>📞 0300-9232233 • WhatsApp 0333-2964231</p>
+<p>© 2026 Shabbir Memon Realtor</p>
 </footer>
 
 <script>
+document.getElementById('mobile-btn').onclick=()=>{
+document.getElementById('mobile-menu').classList.toggle('hidden')
+}
+
 document.getElementById('searchInput').addEventListener('keyup',e=>{
-document.querySelectorAll('.property-card').forEach(card=>{
-card.style.display=card.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'block':'none'
+document.querySelectorAll('.property-card').forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'block':'none'
 })
 })
 </script>
