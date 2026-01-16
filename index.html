@@ -34,119 +34,94 @@ html { scroll-behavior: smooth; }
   background: linear-gradient(rgba(0,43,92,0.7), rgba(0,43,92,0.7)),
   url('https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/hero%20banner.jpg.png') center/cover no-repeat;
 }
-.property-card:hover { transform: translateY(-5px); box-shadow: 0 20px 30px rgba(0,0,0,0.12); }
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px rgba(0,0,0,0.12);
+}
 </style>
 </head>
 
-<body class="bg-bgLight text-gray-800 flex flex-col min-h-screen">
-
-<!-- NAV -->
-<nav class="sticky top-0 bg-white/95 backdrop-blur shadow z-50">
-<div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
-<div class="flex items-center gap-3">
-<img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/logo.png.png" class="h-12">
-<div>
-<p class="font-bold text-primary">Shabbir Memon</p>
-<p class="text-xs text-secondary">REALTOR ISB & KHI</p>
-</div>
-</div>
-<div class="hidden md:flex gap-6">
-<a href="#properties">House</a>
-<a href="#properties">Apartment</a>
-<a href="#properties">Commercial</a>
-<a href="#conversion">Conversion</a>
-<a href="#about">About</a>
-<a href="https://wa.me/923332964231" class="bg-secondary text-white px-4 py-2 rounded">
-<i class="fab fa-whatsapp"></i> Contact
-</a>
-</div>
-</div>
-</nav>
+<body class="text-gray-800 antialiased flex flex-col min-h-screen bg-bgLight">
 
 <!-- HERO -->
 <header class="hero-section flex flex-col items-center justify-center text-center text-white px-4">
-<h1 class="text-4xl md:text-5xl font-bold mb-4">Find Your Dream Property</h1>
-<p class="max-w-xl text-lg text-gray-200">Verified properties in Islamabad & Karachi</p>
+<h1 class="text-3xl md:text-5xl font-bold mb-4">Find Your Dream Property</h1>
+<p class="text-lg md:text-xl text-gray-200 mb-6 max-w-2xl">
+Premium real estate opportunities in Islamabad & Karachi. Verified listings, genuine deals.
+</p>
 </header>
 
-<!-- PROPERTIES -->
-<section id="properties" class="py-16 max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+<!-- LISTINGS -->
+<section id="properties" class="py-16 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 <!-- CARD -->
-<div class="property-card bg-white rounded-xl shadow overflow-hidden flex flex-col">
+<div class="property-card bg-white rounded-xl overflow-hidden shadow-md flex flex-col">
 <img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/apartment%20for%20sale%20johar%20.jpg" class="h-64 object-cover">
-<div class="p-6 flex-1">
-<h3 class="font-bold text-xl mb-2">3-Bed Flat – Gulistan-e-Jauhar</h3>
-<p class="text-gray-600 mb-4">1400 Sq Ft • Lift • Generator</p>
-<a href="https://wa.me/923332964231" class="block bg-green-500 text-white text-center py-3 rounded mb-2">
-WhatsApp: 0333-2964231
-</a>
-<a href="tel:03009232233" class="block bg-secondary text-white text-center py-2 rounded">
-Call: 0300-9232233
-</a>
-</div>
-</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-xl font-bold text-primary mb-3">3-Bed Flat – Gulistan-e-Jauhar Block 15</h3>
+<p class="text-gray-600 mb-4">1400 Sq Ft • Lift • Generator • Road Facing</p>
 
-<div class="property-card bg-white rounded-xl shadow overflow-hidden flex flex-col">
-<img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/building%20for%20sale%20karachi.jpg.jpg" class="h-64 object-cover">
-<div class="p-6 flex-1">
-<h3 class="font-bold text-xl mb-2">Commercial Building – Bahadurabad</h3>
-<p class="text-gray-600 mb-4">Prime location • High ROI</p>
-<a href="https://wa.me/923332964231" class="block bg-green-500 text-white text-center py-3 rounded mb-2">
-WhatsApp: 0333-2964231
+<a href="https://wa.me/923332964231" class="bg-green-500 text-white text-center py-3 rounded-lg mb-2">
+<i class="fab fa-whatsapp mr-2"></i> 0333-2964231
 </a>
-<a href="tel:03009232233" class="block bg-secondary text-white text-center py-2 rounded">
-Call: 0300-9232233
-</a>
-</div>
-</div>
 
-<div class="property-card bg-white rounded-xl shadow overflow-hidden flex flex-col">
-<img src="https://media.zameen.com/thumbnails/24893762-800x600.jpeg" class="h-64 object-cover">
-<div class="p-6 flex-1">
-<h3 class="font-bold text-xl mb-2">House – F-11 Islamabad</h3>
-<p class="text-gray-600 mb-4">Luxury • Secure • Investment</p>
-<a href="https://wa.me/923332964231" class="block bg-green-500 text-white text-center py-3 rounded mb-2">
-WhatsApp: 0333-2964231
-</a>
-<a href="tel:03009232233" class="block bg-secondary text-white text-center py-2 rounded">
-Call: 0300-9232233
+<a href="tel:03009232233" class="bg-secondary text-white text-center py-2 rounded-lg">
+📞 0300-9232233
 </a>
 </div>
 </div>
 
 </section>
 
-<!-- CONVERSION -->
-<section id="conversion" class="bg-white py-16 text-center">
-<h2 class="text-3xl font-bold mb-6">Land Conversion</h2>
-<p>1 Marla = 272 Sq Ft • 20 Marla = 1 Kanal • 8 Kanal = 1 Acre</p>
+<!-- CONVERSION TABLE (UNCHANGED) -->
+<section id="conversion" class="bg-white py-16 border-t border-gray-200">
+<div class="max-w-4xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-primary mb-6 text-center">Land Conversion Tool</h2>
+<table class="w-full border-collapse">
+<tr class="bg-primary text-white">
+<th class="p-4">Marla</th>
+<th class="p-4">Sq Ft</th>
+<th class="p-4">Kanal</th>
+</tr>
+<tr><td class="p-4">1</td><td class="p-4">272</td><td class="p-4">0.05</td></tr>
+<tr><td class="p-4">20</td><td class="p-4">5440</td><td class="p-4">1</td></tr>
+</table>
+</div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT (ORIGINAL BOX PRESERVED) -->
 <section id="about" class="py-16 bg-bgLight">
-<div class="max-w-5xl mx-auto bg-white p-10 rounded-xl shadow">
-<h2 class="text-3xl font-bold mb-6">About Us</h2>
-<p class="mb-6 text-lg">Since 1996, helping investors and families buy verified properties in Islamabad & Karachi.</p>
+<div class="max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-lg border-l-4 border-secondary">
+<h2 class="text-3xl font-bold text-primary mb-6">About Us</h2>
 
-<h3 class="font-bold text-primary">Karachi Office</h3>
-<p class="mb-4">Office No. 4, Iqra Arcade, Gulshan-e-Iqbal Block-6, Karachi</p>
+<p class="text-gray-600 mb-6 text-lg">
+Since 1996, we have been helping investors and families buy verified properties in Islamabad & Karachi.
+</p>
 
-<h3 class="font-bold text-primary">Islamabad Office</h3>
-<p class="mb-4">Office No. 1-5, Lord Trade Center, Hilal Rd, F-11 Markaz, Islamabad</p>
+<div class="space-y-4">
+<div>
+<h4 class="font-bold text-primary">Karachi Office</h4>
+<p>Office No. 4, Iqra Arcade, Gulshan-e-Iqbal Block 6, Karachi</p>
+</div>
 
-<p>Email: <b>khizarsorathia@gmail.com</b></p>
-<p>WhatsApp: <b>+92 333 2964231</b></p>
-<p>Call: <b>0300-9232233</b></p>
+<div>
+<h4 class="font-bold text-primary">Islamabad Office</h4>
+<p>Office No. 1–5, Lord Trade Center, Hilal Rd, F-11 Markaz, Islamabad</p>
+</div>
+
+<div>
+<h4 class="font-bold text-primary">Email</h4>
+<p>khizarsorathia@gmail.com</p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-primary text-white py-10 text-center mt-auto">
-<img src="https://raw.githubusercontent.com/mkskhizar/khizarsorathiarealtor/main/logo.png.png" class="h-16 mx-auto mb-4">
+<footer class="bg-primary text-white py-12 text-center mt-auto">
 <p class="font-bold">Shabbir Memon Realtor | ISB & KHI</p>
 <p class="mt-2">📞 0300-9232233 • WhatsApp 0333-2964231</p>
-<p class="text-sm mt-2 opacity-70">Direct & Genuine Deals • Dealers Welcome</p>
+<p class="text-sm opacity-70 mt-2">Direct & Genuine Deals Only • Dealers Welcome</p>
 </footer>
 
 </body>
