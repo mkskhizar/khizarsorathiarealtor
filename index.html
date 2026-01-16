@@ -3,114 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shabbir Memon Realtor | KHI & ISB</title>
+  <title>Shabbir Memon Realtor | Properties in Karachi & Islamabad</title>
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
-    header { background: #004aad; color: white; text-align: center; padding: 30px 10px; }
-    h1 { margin: 0; font-size: 2.5em; }
-    .tagline { font-size: 1.2em; margin-top: 10px; }
-    .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
-    .property { background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; padding: 20px; overflow: hidden; }
-    .property img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; display: block; }
-    h2 { color: #004aad; margin-top: 0; }
-    .price { font-size: 1.5em; font-weight: bold; color: #d32f2f; margin: 10px 0; }
-    .contact { background: #004aad; color: white; padding: 15px; text-align: center; border-radius: 8px; margin-top: 20px; }
-    .cta-button { display: inline-block; background: #25D366; color: white; padding: 15px 30px; font-size: 1.3em; text-decoration: none; border-radius: 50px; margin: 20px 0; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-    .cta-button:hover { background: #128C7E; }
-    footer { text-align: center; padding: 20px; background: #004aad; color: white; margin-top: 40px; }
-    @media (max-width: 768px) { h1 { font-size: 2em; } }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f8f9fa; color: #333; }
+    header { background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 74, 173, 0.8)), url('https://www.zameen.com/assets/imageShare.492800a17d8f944f7d8ff4bbee81c178.jpg') center/cover; color: white; text-align: center; padding: 80px 20px; }
+    h1 { margin: 0; font-size: 3em; }
+    .hero p { font-size: 1.4em; margin: 15px 0; }
+    .tabs { display: flex; justify-content: center; background: #004aad; padding: 15px 0; }
+    .tab { color: white; padding: 12px 30px; cursor: pointer; font-weight: bold; border-radius: 30px 0 0 30px; background: rgba(255,255,255,0.2); margin: 0 5px; transition: all 0.3s; }
+    .tab.active, .tab:hover { background: white; color: #004aad; }
+    .sub-tabs { text-align: center; padding: 20px 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .sub-tab { padding: 10px 25px; margin: 0 8px; border: 2px solid #004aad; border-radius: 30px; cursor: pointer; background: white; color: #004aad; font-weight: bold; transition: all 0.3s; }
+    .sub-tab.active { background: #004aad; color: white; }
+    .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
+    .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-8px); }
+    .card img { width: 100%; height: 220px; object-fit: cover; }
+    .card-content { padding: 15px; }
+    .card h3 { margin: 0 0 10px; font-size: 1.3em; color: #004aad; }
+    .price { font-size: 1.4em; font-weight: bold; color: #e63946; margin: 8px 0; }
+    .details { color: #555; font-size: 0.95em; line-height: 1.5; }
+    .contact-btn { display: block; background: #25D366; color: white; text-align: center; padding: 12px; margin: 15px auto 0; border-radius: 30px; text-decoration: none; font-weight: bold; width: 80%; }
+    .contact-btn:hover { background: #128C7E; }
+    footer { text-align: center; padding: 30px; background: #004aad; color: white; margin-top: 50px; }
+    @media (max-width: 768px) { .tabs { flex-wrap: wrap; } .tab { border-radius: 30px; margin: 8px; } }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Shabbir Memon Realtor</h1>
-    <p class="tagline">Premium Properties in Karachi (KHI) & Islamabad (ISB) – Buy, Sell, Rent</p>
-    <p>Trusted Real Estate Expert | Direct Deals | Family & Investment Properties</p>
+    <p>Find Your Dream Property in Karachi & Islamabad – Sale, Rent, Investment</p>
+    <p>Direct Deals • Trusted Expert • Call/WhatsApp: 0335-9282233</p>
   </header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showCity('karachi')">Karachi</div>
+    <div class="tab" onclick="showCity('islamabad')">Islamabad</div>
+  </div>
+
+  <div class="sub-tabs" id="subTabs">
+    <div class="sub-tab active" onclick="showPurpose('sale')">For Sale</div>
+    <div class="sub-tab" onclick="showPurpose('rent')">For Rent</div>
+  </div>
 
   <div class="container">
 
-    <h2 style="text-align:center; color:#004aad;">Featured Properties</h2>
+    <!-- Karachi Sale -->
+    <div id="karachi-sale" class="grid">
+      <!-- Gulistan Flat -->
+      <div class="card">
+        <img src="https://homefixer.pk/wp-content/uploads/2025/01/02-BED-3-BED-Apartments-on-Easy-Installments-in-Gulistan-e-Johar-Karachi-15.jpeg" alt="Gulistan-e-Jauhar Flat">
+        <div class="card-content">
+          <h3>Flat for Sale – Gulistan-e-Jauhar Block 15 (Decent Towers)</h3>
+          <p class="price">Exclusive Price – One Call Away</p>
+          <p class="details">3 Bed DD • 1400 Sq Ft • 2nd Floor • Lift • Generator • Leased</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20Gulistan-e-Jauhar%20Flat" class="contact-btn">WhatsApp Now</a>
+        </div>
+      </div>
 
-    <!-- Property 1 -->
-    <div class="property">
-      <img src="https://media.zameen.com/thumbnails/7460624-800x600.jpeg" alt="Decent Towers Apartment Gulistan-e-Jauhar">
-      <h2>Flat for Sale – Gulistan-e-Jauhar, Block 15 (Decent Towers)</h2>
-      <p>3 Bedrooms with Attached Baths<br>Covered Area: 1400 Sq. Ft<br>2nd Floor | Lift Available<br>Road Facing Apartment<br>Standby Generator & Compound Parking<br>Leased | Key Available<br>Suitable for Family Living or Investment</p>
-      <p class="price">Exclusive Price for Direct Buyers & Dealers</p>
-      <p><strong>Best Price Available – One Call Away!</strong></p>
-      <div class="contact">
-        Contact: Shabbir Memon Realtor KHI & ISB<br>
-        📞 0335-9282233<br>
-        WhatsApp: 0333-2964231<br>
-        Location: Gulistan-e-Jauhar, Block 15 — Decent Towers, Karachi
+      <!-- FB Area Showroom -->
+      <div class="card">
+        <img src="https://maxxcapitals.com/wp-content/uploads/2024/09/Saima-Business-Center-Office-Spaces-for-Sale-in-Clifton-Block-7-Clifton-Karachi-3-1170x785.webp" alt="FB Area Showroom">
+        <div class="card-content">
+          <h3>Prime Commercial Showroom – FB Area</h3>
+          <p class="price">Contact for Demand</p>
+          <p class="details">1600 Sq Ft • Rented to Bank • Monthly Rent 350k • Long Lease</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20FB%20Area%20Showroom" class="contact-btn">WhatsApp Now</a>
+        </div>
+      </div>
+
+      <!-- Bahadurabad Building -->
+      <div class="card">
+        <img src="https://maxxcapitals.com/wp-content/uploads/2025/03/Office-for-Sale-in-SM-House-Prime-North-Nazimabad-1.jpg" alt="Bahadurabad Commercial">
+        <div class="card-content">
+          <h3>Commercial Building – Bahadurabad (Fully Rented)</h3>
+          <p class="price">Demand: 16 Crore</p>
+          <p class="details">2100 Sq Ft • Rented to Big Shoe Brand • 745k/month Income • 10 Yr Lease</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20Bahadurabad%20Building" class="contact-btn">WhatsApp Now</a>
+        </div>
       </div>
     </div>
 
-    <!-- Property 2 -->
-    <div class="property">
-      <img src="https://media.zameen.com/thumbnails/24893762-800x600.jpeg" alt="House in F-11 Islamabad">
-      <h2>House for Sale – F-11, Islamabad</h2>
-      <p>Basement, Ground & First Floor<br>Plot Size: 666 Sq. Yards (1.5 Kanal)<br>8 Bedrooms with Attached Baths<br>Closed-end street ensuring privacy<br>Suitable for family, guest house or smart investment</p>
-      <p class="price">Contact for Details & Demand</p>
-      <div class="contact">
-        Contact: Shabbir Memon Realtor KHI & ISB<br>
-        📞 0335-9282233<br>
-        WhatsApp: 0333-2964231<br>
-        Location: F-11, Islamabad
+    <!-- Islamabad Sale -->
+    <div id="islamabad-sale" class="grid" style="display:none;">
+      <!-- F-11 House -->
+      <div class="card">
+        <img src="https://media.zameen.com/thumbnails/87013826-800x600.jpeg" alt="F-11 House">
+        <div class="card-content">
+          <h3>House for Sale – F-11 Islamabad</h3>
+          <p class="price">Contact for Demand</p>
+          <p class="details">1.5 Kanal • 8 Bed • Basement+Ground+1st • Privacy Street • Investment/Family</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20F-11%20House" class="contact-btn">WhatsApp Now</a>
+        </div>
       </div>
     </div>
 
-    <!-- Property 3 -->
-    <div class="property">
-      <img src="https://c8.alamy.com/comp/CA08N4/people-gather-at-muslim-commercial-bank-mcb-building-where-police-CA08N4.jpg" alt="Commercial Showroom FB Area Karachi">
-      <h2>Prime Commercial Showroom for Sale – FB Area, Karachi</h2>
-      <p>Size: 1,600 sq.ft<br>Rented to: Renowned Bank – steady rental income<br>Monthly Rent: 350,000/-<br>Lease: Long-term, secure agreement.</p>
-      <p class="price">Contact for Further Details</p>
-      <div class="contact">
-        Contact: Shabbir Memon Realtor KHI & ISB<br>
-        📞 0335-9282233 | 0300-9232233<br>
-        WhatsApp: 0333-2964231
-      </div>
+    <!-- Karachi Rent (Add if you have more) -->
+    <div id="karachi-rent" class="grid" style="display:none;">
+      <p style="text-align:center; color:#777; grid-column:1/-1;">No rent listings in Karachi yet. Contact for updates!</p>
     </div>
 
-    <!-- Property 4 -->
-    <div class="property">
-      <img src="https://media.zameen.com/thumbnails/44333538-800x600.jpeg" alt="House for Rent E-11 Islamabad">
-      <h2>🏠 House for Rent – Main Double Road, E-11 Islamabad</h2>
-      <p>✔️ 7 Marla House<br>✔️ Just 1 Minute from E-11 Markaz<br>✔️ 5 Bedrooms + Mumty<br>✔️ Ideal for Hostel or Airbnb Business<br>✔️ Hostel Furniture Available (Can Be Purchased)<br>✔️ Prime Main Road Location</p>
-      <p class="price">Rent: PKR 2.5 Lac / Month</p>
-      <div class="contact">
-        Contact: Shabbir Memon Realtor KHI & ISB<br>
-        📞 0335-9282233
+    <!-- Islamabad Rent -->
+    <div id="islamabad-rent" class="grid" style="display:none;">
+      <!-- E-11 House Rent -->
+      <div class="card">
+        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2541634936227223" alt="E-11 House Rent">
+        <div class="card-content">
+          <h3>House for Rent – Main Double Road, E-11</h3>
+          <p class="price">PKR 2.5 Lac / Month</p>
+          <p class="details">7 Marla • 5 Bed + Mumty • 1 Min from Markaz • Ideal Hostel/Airbnb</p>
+          <a href="https://wa.me/923332964231?text=Interested%20in%20E-11%20House%20Rent" class="contact-btn">WhatsApp Now</a>
+        </div>
       </div>
-    </div>
-
-    <!-- Property 5 -->
-    <div class="property">
-      <img src="https://static.where-e.com/Pakistan/Sindh/Karachi_City/Karachi-Broast-Gulshan-E-Iqbal_28b25e0d9971152e6f0dcbeeb48bce3f.jpg" alt="Commercial Building Bahadurabad Karachi">
-      <h2>Commercial Building for Sale – Fully Rented Investment</h2>
-      <p>📍 Bahadurabad – Opposite KFC, Chaar Minar Chowrangi (BMCHS)<br>Prime Commercial Belt | High Footfall Location</p>
-      <p>Ground Floor: 700 sq.ft | 1st Floor: 700 sq.ft | 2nd Floor: 700 sq.ft<br>Frontage: 20 ft | Total Covered Area: 2100 sq.ft</p>
-      <p>New Agreement: 10 Years | Annual Increase: 8%<br>Rented to: Pakistan's Biggest Shoe Brand<br>Gross Rental Income: 745,000/- per month</p>
-      <p class="price">Demand: 160,000,000/- (16 Crore Only)</p>
-      <div class="contact">
-        Offered by: Shabbir Memon Realtor KHI & ISB
-      </div>
-    </div>
-
-    <!-- Big WhatsApp CTA Button -->
-    <div style="text-align: center;">
-      <a href="https://wa.me/923332964231?text=Hello%20Shabbir%20Memon%20Realtor%2C%20I%20am%20interested%20in%20your%20property..." class="cta-button">📲 WhatsApp Now: 0333-2964231</a>
     </div>
 
   </div>
 
   <footer>
-    <p>Shabbir Memon Realtor KHI & ISB – Your Trusted Partner in Real Estate</p>
-    <p>© 2026 | Contact: 0335-9282233 | WhatsApp: 0333-2964231</p>
+    <p>Shabbir Memon Realtor KHI & ISB • 📞 0335-9282233 | 0300-9232233 • WhatsApp: 0333-2964231</p>
+    <p>Premium Properties • Direct Clients & Genuine Dealers Only</p>
   </footer>
+
+  <script>
+    function showCity(city) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('karachi-sale').style.display = 'none';
+      document.getElementById('islamabad-sale').style.display = 'none';
+      document.getElementById('karachi-rent').style.display = 'none';
+      document.getElementById('islamabad-rent').style.display = 'none';
+      document.getElementById(city + '-sale').style.display = 'grid';
+      document.querySelector('.sub-tab.active').click(); // Reset to sale
+    }
+
+    function showPurpose(purpose) {
+      document.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      const activeCity = document.querySelector('.tab.active').textContent.toLowerCase();
+      document.getElementById('karachi-sale').style.display = 'none';
+      document.getElementById('islamabad-sale').style.display = 'none';
+      document.getElementById('karachi-rent').style.display = 'none';
+      document.getElementById('islamabad-rent').style.display = 'none';
+      document.getElementById(activeCity + '-' + purpose).style.display = 'grid';
+    }
+  </script>
 
 </body>
 </html>
